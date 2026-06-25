@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 16px;
+  font-size: 32px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+#new-game {
+  padding: 8px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background: #4a90d9;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+#new-game:hover {
+  background: #357abd;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  perspective: 600px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card.matched {
+  cursor: default;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.card-back {
+  background: #4a90d9;
+  color: #fff;
+}
+
+.card-front {
+  background: #fff;
+  border: 2px solid #4a90d9;
+  transform: rotateY(180deg);
+}
+
+.card.matched .card-front {
+  border-color: #27ae60;
+  background: #eafaf1;
+}
+
+.win-message {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.hidden {
+  display: none;
+}
