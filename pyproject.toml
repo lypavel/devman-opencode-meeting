@@ -1,7 +1,0 @@
-[project]
-name = "devman-ai-lesson-1"
-version = "0.1.0"
-description = "Task for first Devman Opencode lesson."
-readme = "README.md"
-requires-python = ">=3.13"
-dependencies = []
